@@ -21,8 +21,8 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/');
   });
 
-  server.get('/user', (req, res) => {
-    renderAndCache(req, res, '/user');
+  server.get('/users', (req, res) => {
+    renderAndCache(req, res, '/users');
   });
 
   server.get('/posts', (req, res) => {

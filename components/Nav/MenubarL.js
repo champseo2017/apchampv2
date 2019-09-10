@@ -35,7 +35,7 @@ const MenubarL = (props) => {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="/user">
+                <Link href="/users">
                   <a className="nav-link">Photo</a>
                 </Link>
               </NavItem>

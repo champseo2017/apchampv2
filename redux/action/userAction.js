@@ -1,0 +1,12 @@
+import axios from 'axios'
+export const loadUsers = () => {
+    return (dispatch) => {
+        // ก่อนดึงข้อมูลสั่ง dispatch ให้ reducer รู้ก่อนเพื่อจะแสดง loading
+        dispatch({ type: 'LOAD_USERS_PENDING' })
+        return axios.get(`https://jsonplaceholder.typicode.com/users`).then(results => {
+            dispatch({ type: 'LOAD_USERS_SUCCESS', payload: results.data })
+        }).catch(err => {
+            dispatch({ type: 'LOAD_USERS_REJECTED', payload: err.message })
+        })
+    }
+}

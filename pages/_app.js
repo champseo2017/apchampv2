@@ -3,7 +3,7 @@ import App from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux';
 
-export default withRedux(initStore, { debug: true })(
+export default withRedux(initStore)(
   class MyApp extends App {
     render() {
       

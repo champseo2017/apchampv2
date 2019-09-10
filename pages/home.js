@@ -5,7 +5,8 @@ import {
     Icon
 } from 'antd';
 import { useRouter } from 'next/router'
-import Oops from '../components/Oops';
+import axios from "axios";
+import Oops from '../components/Oops'
 
 
 const Home = (props) => {
@@ -43,10 +44,12 @@ const Home = (props) => {
         }
     }
     const {data} = props
-    console.log(data)
+   
     return (
         <React.Fragment>
+            <div style={{padding:"10px"}}>
             {renderhome()}
+            </div>
             <h1>Hello</h1>
             <h1>Next js and PWA and Redux</h1>
             <p>อายุ {props.age} ปี</p>

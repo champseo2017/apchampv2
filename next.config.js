@@ -37,7 +37,7 @@ module.exports = withOffline(withCSS({
           },
         },
         {
-          urlPattern: '/user',
+          urlPattern: '/users',
           handler: 'networkFirst',
           options: {
             cacheName: 'html-cache',

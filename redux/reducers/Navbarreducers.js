@@ -1,6 +1,6 @@
 const initialState = {
     Home: "/",
-    User: "/user"
+    User: "/users"
 }
 export default (state = initialState, action) => {
     switch (action.type) {
