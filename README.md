@@ -20,7 +20,8 @@ This is a Progressive Web App built with React. Main features include -
 
 - Used react-progressive-image for better image loading setup
 
-
+Read this series of articles where I go through the whole thing -
+Building a Progressive Web App with Next.js - [Part I](https://able.bio/drenther/building-a-progressive-web-app-with-nextjs-part-i--00edasw) and [Part II](https://able.bio/drenther/building-a-progressive-web-app-with-nextjs-part-ii--98ojk46)
 
 ## Want to play around with it
 
