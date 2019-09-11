@@ -41,13 +41,13 @@ const Album = (props) => {
     return (
         <Layout>
             <React.Fragment>
-                {dataAlbumsid.isLoading && <div>Loading...</div>}
                 {dataUsers.data && dataUsers.data.map(e => {
                     let userid = parseInt(id, 10);
                     if (e.id === userid) {
                         return <h1>Album Photos Of : {e.name}</h1>
                     }
                 })}
+                {dataAlbumsid.isLoading && <div>Loading...</div>}
                 <AlbumList data={dataAlbumsid.data}/>
             </React.Fragment>
         </Layout>

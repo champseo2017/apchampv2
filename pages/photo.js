@@ -62,8 +62,8 @@ const Photo = (props) => {
     return (
         <Layout>
             <React.Fragment>
-                {photosData.isLoading && <div>Loading...</div>}
                 <h1>Photos by | {title}</h1>
+                {photosData.isLoading && <div>Loading...</div>}
                 <PhotoList data={photosData.data} />
             </React.Fragment>
         </Layout>

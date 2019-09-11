@@ -54,6 +54,7 @@ const User = (props) => {
             <div style={{ padding: "10px" }}>
                 {renderuser()}
             </div>
+            <h2>Album Per User</h2>
             {dataUsers.isLoading && <div>Loading...</div>}
             <UserList data={dataUsers.data} />
         </Layout>
