@@ -9,7 +9,6 @@ import Oops from '../components/Oops'
 import PhotoList from '../components/Photos/PhotoList'
 import Error from "next/error";
 
-
 const Photo = (props) => {
 
     const router = useRouter()

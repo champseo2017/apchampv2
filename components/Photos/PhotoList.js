@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Photo from './Photo'
+import dynamic from "next/dynamic";
+const Photo = dynamic(import("./Photo"), {
+    ssr: false
+});
 
  const PhotoList = (props) => {
         const {data} = props

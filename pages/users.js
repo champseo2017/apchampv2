@@ -6,9 +6,12 @@ import {
     Icon
 } from 'antd';
 import { useRouter } from 'next/router'
-import UserList from '../components/Users/UserList'
 import { loadUsers } from '../redux/action/userAction'
 import Oops from '../components/Oops'
+import dynamic from "next/dynamic";
+const UserList = dynamic(import("../components/Users/UserList"), {
+    ssr: false
+});
 
 const User = (props) => {
     

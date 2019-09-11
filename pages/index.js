@@ -2,7 +2,10 @@ import axios from "axios";
 import Oops from '../components/Oops';
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import Home from "./home"
+import dynamic from "next/dynamic";
+const Home = dynamic(import("./home"), {
+    ssr: false
+});
 
 const Index = (props) => {
 

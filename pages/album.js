@@ -5,7 +5,10 @@ import { loadAlbumid } from '../redux/action/albumAction'
 import { loadUsers } from '../redux/action/userAction'
 import Layout from "../components/Layout";
 import { useRouter } from 'next/router'
-import AlbumList from '../components/Albums/AlbumList'
+import dynamic from "next/dynamic";
+const AlbumList = dynamic(import("../components/Albums/AlbumList"), {
+    ssr: false
+});
 
 const Album = (props) => {
 
