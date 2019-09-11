@@ -25,10 +25,14 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/users');
   });
 
-  server.get('/posts', (req, res) => {
-    console.log(req)
-    // const queryParams = { id: req.params.id };
-    renderAndCache(req, res, '/posts');
+  server.get('/album/:id', (req, res) => {
+    const queryParams = { id: req.params.id };
+    renderAndCache(req, res, '/album', queryParams);
+  });
+
+  server.get('/photo/:id', (req, res) => {
+    const queryParams = { id: req.params.id };
+    renderAndCache(req, res, '/photo', queryParams);
   });
 
   server.get('*', (req, res) => {

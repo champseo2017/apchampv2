@@ -12,7 +12,7 @@ module.exports = withOffline(withCSS({
       fs: 'empty',
     };
 
-    if (isServer) {
+    if (!isServer) {
       config.module.rules.find(({ test }) => test.test('style.css')).use.push({
         loader: 'css-purify-webpack-loader',
         options: {
@@ -44,6 +44,26 @@ module.exports = withOffline(withCSS({
           },
         },
         {
+          urlPattern: new RegExp('^https://jsonplaceholder.typicode.com/users'),
+          handler: 'staleWhileRevalidate',
+          options: {
+            cacheName: 'api-cache',
+            cacheableResponse: {
+              statuses: [200],
+            },
+          },
+        },
+        {
+          urlPattern: new RegExp('^https://jsonplaceholder.typicode.com/albums'),
+          handler: 'staleWhileRevalidate',
+          options: {
+            cacheName: 'api-cache',
+            cacheableResponse: {
+              statuses: [200],
+            },
+          },
+        },
+        {
           urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
           handler: 'cacheFirst',
           options: {
@@ -57,7 +77,7 @@ module.exports = withOffline(withCSS({
     };
 
 
-    if (isServer && !dev) {
+    if (!isServer && !dev) {
       config.plugins.push(
         new NextWorkboxPlugin({
           buildId,
