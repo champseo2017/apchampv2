@@ -47,7 +47,7 @@ const User = (props) => {
     }
 
     if(dataUsers.isRejected){
-        return <Layout><Oops /></Layout>
+        return <Layout><div style={{padding:"10%"}}><Oops /></div></Layout>
     }
     return (
         <Layout>

@@ -2,7 +2,7 @@ import axios from "axios";
 import Oops from '../components/Oops';
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import Home from "./home"
+import Home from "./Home"
 
 const Index = (props) => {
 

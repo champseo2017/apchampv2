@@ -33,8 +33,10 @@ const Album = (props) => {
 
    
       if(dataAlbumsid.isRejected){
-            return <Layout><Oops /></Layout>
+            return <Layout><div style={{padding:"10%"}}><Oops /></div></Layout>
       }
+
+    
       
     return (
         <Layout>
@@ -43,7 +45,7 @@ const Album = (props) => {
                 {dataUsers.data && dataUsers.data.map(e => {
                     let userid = parseInt(id, 10);
                     if (e.id === userid) {
-                        return <h1>Name: {e.name}</h1>
+                        return <h1>Album Photos Of : {e.name}</h1>
                     }
                 })}
                 <AlbumList data={dataAlbumsid.data}/>

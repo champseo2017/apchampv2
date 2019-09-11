@@ -30,8 +30,13 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/album', queryParams);
   });
 
-  server.get('/photo/:id', (req, res) => {
-    const queryParams = { id: req.params.id };
+  server.get('/photo/:id/:title', (req, res) => {
+    let titlere = req.params.title
+    let replacetitle = titlere.replace(/[^A-Za-z0-9]/g," ")
+    const queryParams = { 
+      id: req.params.id, 
+      title: replacetitle
+    };
     renderAndCache(req, res, '/photo', queryParams);
   });
 
