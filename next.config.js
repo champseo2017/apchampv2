@@ -12,14 +12,14 @@ module.exports = withOffline(withCSS({
       fs: 'empty',
     };
 
-    if (isServer) {
+  
       config.module.rules.find(({ test }) => test.test('style.css')).use.push({
         loader: 'css-purify-webpack-loader',
         options: {
           includes: ['./pages/*.js', './components/*.js'],
         },
       });
-    }
+  
 
     const workboxOpts = {
       clientsClaim: true,
@@ -76,8 +76,6 @@ module.exports = withOffline(withCSS({
       ],
     };
 
-
-    if (isServer && !dev) {
       config.plugins.push(
         new NextWorkboxPlugin({
           buildId,
@@ -110,7 +108,6 @@ module.exports = withOffline(withCSS({
           publicPath: '..',
         })
       );
-    }
 
     return config;
   },
